@@ -1,0 +1,215 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/grey_button04.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/UI/grey_button13.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/arrow-UP.png" type="Texture" id=5]
+[ext_resource path="res://PlayButton.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 5
+outline_color = Color( 0.87451, 0.921569, 0.0784314, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.631373, 0.243137, 0.823529, 0.505882 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+outline_color = Color( 0, 0, 0, 0 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 39
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 21
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Assets/fonts/BalsamiqSans-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+font_data = SubResource( 7 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 0 )
+
+[node name="TitleMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.341176, 0.14902, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 90.4418
+margin_top = 98.799
+margin_right = 972.442
+margin_bottom = 169.799
+custom_fonts/font = SubResource( 1 )
+text = "Platformer Game !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 23.0
+margin_top = 396.0
+margin_right = 413.0
+margin_bottom = 575.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spaceButton" type="TextureRect" parent="."]
+margin_left = 52.1581
+margin_top = 515.27
+margin_right = 181.158
+margin_bottom = 555.27
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Label" parent="spaceButton"]
+margin_left = 21.7091
+margin_top = 13.2142
+margin_right = 101.709
+margin_bottom = 35.2142
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.160784, 0.141176, 0.141176, 1 )
+text = "Space"
+
+[node name="equals" type="Label" parent="spaceButton"]
+margin_left = 142.556
+margin_top = -5.98969
+margin_right = 167.556
+margin_bottom = 44.0103
+custom_fonts/font = SubResource( 4 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jumpText" type="Label" parent="spaceButton"]
+margin_left = 177.8
+margin_top = 11.8994
+margin_right = 246.8
+margin_bottom = 33.8994
+custom_fonts/font = SubResource( 5 )
+text = "JUMP"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="guide" type="Node2D" parent="."]
+
+[node name="buttonLeft" type="TextureRect" parent="guide"]
+margin_left = 57.1464
+margin_top = 419.074
+margin_right = 106.146
+margin_bottom = 464.074
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLeft" type="TextureRect" parent="guide/buttonLeft"]
+margin_left = 4.16751
+margin_top = 40.7621
+margin_right = 40.1675
+margin_bottom = 76.7621
+rect_rotation = -89.1801
+texture = ExtResource( 5 )
+expand = true
+
+[node name="buttonRight" type="TextureRect" parent="guide"]
+margin_left = 178.816
+margin_top = 465.016
+margin_right = 227.816
+margin_bottom = 510.016
+rect_rotation = 179.785
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLeft" type="TextureRect" parent="guide/buttonRight"]
+margin_left = 4.16751
+margin_top = 40.7621
+margin_right = 40.1675
+margin_bottom = 76.7621
+rect_rotation = -89.1801
+texture = ExtResource( 5 )
+expand = true
+
+[node name="equals" type="Label" parent="guide"]
+margin_left = 198.723
+margin_top = 415.736
+margin_right = 223.723
+margin_bottom = 465.736
+custom_fonts/font = SubResource( 4 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveText" type="Label" parent="guide"]
+margin_left = 226.84
+margin_top = 434.516
+margin_right = 295.84
+margin_bottom = 456.516
+custom_fonts/font = SubResource( 5 )
+text = "Move"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 418.773
+margin_top = 255.363
+margin_right = 614.773
+margin_bottom = 319.363
+theme = SubResource( 6 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 12 )
+custom_colors/font_color = Color( 0.8, 0.870588, 0.0588235, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.721569, 0.0392157, 1 )
+custom_colors/font_color_pressed = Color( 0.878431, 0.298039, 0.180392, 1 )
+text = "Play !"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
